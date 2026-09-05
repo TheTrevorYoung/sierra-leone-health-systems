@@ -1,0 +1,41 @@
+name: Bootstrap Health Systems Site
+
+on:
+  push:
+    paths:
+      - '.bootstrap2/READY'
+
+permissions:
+  contents: write
+
+jobs:
+  expand-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Reconstruct and expand verified site package
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .bootstrap2/chunk-* > /tmp/healthsite.b64
+          base64 --decode /tmp/healthsite.b64 > /tmp/healthsite.zip
+          echo "8f99cabe095e3e69f2c166304aac163486437da652edd140f4af667df5e65691  /tmp/healthsite.zip" | sha256sum -c -
+          rm -rf /tmp/healthsite-unpack
+          mkdir -p /tmp/healthsite-unpack
+          unzip -q /tmp/healthsite.zip -d /tmp/healthsite-unpack
+          rsync -a --exclude '.github/' /tmp/healthsite-unpack/sierra-leone-health-systems-site/ ./
+          rm -rf .bootstrap .bootstrap2
+      - name: Commit expanded site
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Deploy Sierra Leone Health Systems website v0.2"
+            git push
+          fi
