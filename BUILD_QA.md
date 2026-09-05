@@ -1,30 +1,47 @@
-# Build QA — v0.1
+# Sierra Leone Health Systems — Build & Infrastructure QA
 
-Date: 2026-09-05
+**Review date:** September 5, 2026  
+**Website tier:** Tier 1 — Direct Publish  
+**Repository:** `TheTrevorYoung/sierra-leone-health-systems`  
+**Public URL:** https://thetrevoryoung.github.io/sierra-leone-health-systems/
 
-## Passed
-- Internal-link validation across all HTML pages
-- Exactly one H1 per HTML page
-- Desktop horizontal-overflow check at 1440px
-- Mobile horizontal-overflow check at 390px
-- Homepage desktop render reviewed
-- Homepage mobile render reviewed
-- GitHub Pages relative-path compatibility
-- Provider/research phase boundary retained in header/footer/content
-- No patient portal, appointment flow, symptom checker, medical-advice form, insurance enrollment, health-record upload, clinical triage, or sensitive health-data intake
+## Registry alignment
+The shared Portfolio Website Registry and locked Website Infrastructure, Deployment & Security Standard supersede the earlier ZIP/Make deployment method.
 
-## Still required before public launch
-- Final content/source review on every public factual claim
-- Technical/expert review for high-stakes health-system interpretation where required
-- Privacy/security review before connecting any live form or analytics service
-- Production accessibility check
-- Production metadata/canonical URL/sitemap check after repository/domain are known
-- Final broken-link check after deployment
-- Confirmation that the public phase remains RESEARCH & CO-DESIGN PHASE
+Verified:
+- dedicated public repository;
+- production branch `main`;
+- GitHub Pages from `main` / root;
+- direct GitHub repository metadata reads work, but direct connector writes remain blocked pending selected-repository GitHub App authorization;
+- routine Make publishing is not required and remains prohibited by the Tier 1 default;
+- a one-time Make administrative exception is being used only to apply this registry-alignment commit and retire the legacy ZIP deployment workflow;
+- GitHub remains the authoritative website code/content source.
 
-## v0.2 content hardening
+## Full static-site audit
+Automated QA passes across **21 HTML files / 20 public routes**.
 
-Added current reform status, comparison synthesis, financing baseline and expanded evidence metadata. Re-run automated QA before deployment.
+Validated:
+- all internal links resolve;
+- exactly one H1 per HTML page;
+- titles and meta descriptions present;
+- `lang="en"` and skip links present;
+- sitemap covers every public route exactly once and excludes the 404 page;
+- `robots.txt` points to the sitemap;
+- 404 is `noindex` and uses project-root-safe links/assets;
+- `evidence.json`, `model.json` and `claims.json` parse successfully;
+- no forms, iframes, patient intake, authentication, payments or sensitive-data flows;
+- no analytics/tracking currently installed;
+- no external runtime JavaScript or stylesheet dependencies;
+- external evidence links use HTTPS and protective `rel` attributes;
+- no obvious committed credential markers or environment files;
+- no localhost/file URLs in deployable HTML.
 
-## v0.2 deployment hardening
-Automated QA also validates page titles/descriptions, `lang="en"`, skip links, structured JSON, absence of localhost/file URLs, and presence of `robots.txt`, `sitemap.xml`, and `.nojekyll`.
+## Performance / complexity
+The site remains deliberately lightweight: static HTML/CSS/JS, no framework build, no database, no image/video payload, and only minimal navigation JavaScript. Tier 1 remains the correct infrastructure classification.
+
+## Remaining infrastructure gates
+1. Add this repository to the selected-repository GitHub App write authorization and verify a direct bounded update.
+2. The production domain remains **TBD**. When an owned domain is connected, update the Website Registry, DNS/HTTPS, canonical URLs, `og:url`, `robots.txt` and `sitemap.xml`, then rerun QA.
+
+## Governance boundary
+The site remains **RESEARCH & CO-DESIGN PHASE**. Infrastructure alignment does not authorize provider, clinical, government-partnership, insurance, pilot, referral-network or patient-enrollment claims.

@@ -1,35 +1,60 @@
 # Sierra Leone Health Systems — Research & Co-Design Website
 
-Initial static website build for the **Research & Co-Design Phase**.
+Public Tier 1 website for **Sierra Leone Health Systems**.
+
+**Production / temporary public URL:** https://thetrevoryoung.github.io/sierra-leone-health-systems/  
+**Repository:** `TheTrevorYoung/sierra-leone-health-systems`  
+**Deployment tier:** Tier 1 — Direct Publish  
+**Production branch:** `main`  
+**Publishing source:** GitHub Pages from `main` / repository root
 
 ## Public boundary
-This is a health-systems research and public-learning website. It is **not** a healthcare provider, hospital, insurance, patient portal, clinical research enrollment site, or government program.
+This is a health-systems research and public-learning website. It is **not** a healthcare provider, hospital, insurer, patient portal, clinical-research enrollment site, or government program.
+
+## Portfolio website standard
+Shared website infrastructure is governed by the locked **Social Media Portfolio — Website Infrastructure, Deployment & Security Standard v1.0** and the shared **Portfolio Website Registry & Infrastructure Status**.
+
+For this Tier 1 site:
+- GitHub is the authoritative source of website code/content.
+- Routine updates are made directly to the repository; **Make is not the routine publishing layer**.
+- GitHub Pages publishes directly from `main` / root.
+- No custom GitHub Action is required merely to publish the site.
+- Routine editing target: **zero Make credits**.
+- The dedicated Health Systems project remains authoritative for content, claims, research methodology, design direction and public identity.
 
 ## Architecture
 - Static HTML/CSS/JS
-- No database dependency for ordinary content
-- No sensitive health-data collection
-- GitHub Pages ready (`.nojekyll` included)
-- Relative links so the site works as a GitHub project page or at a custom domain
+- No server-side runtime, database, authentication or payments
+- No patient intake or sensitive health-data collection
+- No analytics/tracking currently installed
+- No external runtime JS/CSS dependency
+- `.nojekyll`, custom 404, `robots.txt` and `sitemap.xml`
 - Mobile-first and low-bandwidth oriented
 
 ## Key sections
 - `/research/` — comparative health-system research
-- `/sierra-leone/` — Sierra Leone baseline
+- `/sierra-leone/` — Sierra Leone baseline and reform tracker
 - `/model/` — Model 0.x
 - `/participate/` — structured participation architecture
 - `/evidence/` — auditable source library
 - `/pilot-pathway/` — future clinical readiness gates
 - `/about/` — mission, methodology, corrections and boundaries
 
+## Routine update process
+1. Make a bounded, reviewable change.
+2. Run `python scripts/qa.py` locally before publishing.
+3. Commit directly to `main` for ordinary low-risk solo edits.
+4. Use a feature branch / pull request for material redesigns, sensitive claims, risky integrations or multi-contributor work.
+5. Confirm GitHub Pages remains healthy after the commit.
+6. Roll back by reverting to a known-good Git commit if production breaks.
+
+Do **not** use ZIP replacement or Make-based per-file publishing for routine updates.
+
 ## Local preview
 ```bash
 python -m http.server 8000
 ```
 Open `http://localhost:8000/`.
-
-## GitHub Pages
-After creating the repository and adding these files, enable Pages from the `main` branch root (or use the repository’s Pages settings). No build framework is required.
 
 ## Content governance
 All material claims should remain classified as one of:
@@ -40,17 +65,14 @@ All material claims should remain classified as one of:
 
 Do not publish provider, licensing, government-partnership, pilot-authorization, insurance, referral-network, clinical-outcome or patient-enrollment claims before documentary gates close.
 
-## Build v0.2 — evidence hardening
+## Current build
+Build v0.2 includes the Sierra Leone reform tracker, cross-model comparison, Model 0.x, financing context, evidence registry and public claim firewall.
 
-Added September 2026:
-- Current Sierra Leone reform tracker
-- Cross-model comparison matrix
-- Current 2026 NHSSP / Health Benefit Package status
-- 2023 National Health Accounts context on the financing page
-- CHW policy implementation anchors
-- Expanded evidence registry and current-policy compatibility checks
+Registry-alignment hardening completed September 5, 2026:
+- registry-selected GitHub App access can read repository state, but direct repository writes are still blocked pending selected-repository authorization;
+- this alignment is being applied through a one-time Make administrative exception; the legacy ZIP deployment workflow is retired as part of that migration;
+- deployment documentation converted to Tier 1 direct publishing;
+- 404 routing hardened for GitHub project-page paths;
+- QA expanded to verify sitemap coverage, 404 no-index behavior and absence of forms/external runtime dependencies.
 
-The site remains a research-and-co-design platform, not a clinical service.
-
-### Build v0.2 deployment hardening
-Added `robots.txt`, `sitemap.xml`, and expanded automated QA for page metadata, accessibility hooks, structured JSON, local-URL leakage, and deployment-file presence. The sitemap uses the expected GitHub Pages base and must be rechecked if a custom domain is later attached.
+The public discovery base in `robots.txt` and `sitemap.xml` currently uses the GitHub Pages URL. When an owned production domain is connected, those files and any canonical/Open Graph URL metadata must be reconciled to the canonical host.
