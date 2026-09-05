@@ -20,7 +20,9 @@ For this Tier 1 site:
 - GitHub Pages publishes directly from `main` / root.
 - No custom GitHub Action is required merely to publish the site.
 - Routine editing target: **zero Make credits**.
-- Direct selected-repository GitHub read/write access is the target state; the current ChatGPT GitHub App can read this repository but its direct contents write remains blocked, so administrative exceptions may use the separately authorized Make GitHub connection.
+- **GitHub authorization is confirmed and locked.** ChatGPT's GitHub permission setting is `Allow all actions`, and repository metadata reports `admin`, `maintain`, `push`, `pull`, and `triage` permissions.
+- Direct ChatGPT GitHub write execution is currently inconsistent with those confirmed permissions: both the Contents API and Git Data blob write paths return HTTP 403 `Resource not accessible by integration`. This is treated as a connector execution issue, **not** missing owner authorization or missing repository access.
+- No additional GitHub permission change is required from the owner unless a future connector reauthorization is specifically requested.
 - The dedicated Health Systems project remains authoritative for content, claims, research methodology, design direction and public identity.
 
 ## Architecture
@@ -44,12 +46,12 @@ For this Tier 1 site:
 ## Routine update process
 1. Make a bounded, reviewable change.
 2. Run `python scripts/qa.py` locally before publishing.
-3. Commit directly to `main` for ordinary low-risk solo edits when direct repository write access is available.
+3. Commit directly to `main` for ordinary low-risk solo edits when the direct GitHub connector executes writes normally.
 4. Use a feature branch / pull request for material redesigns, sensitive claims, risky integrations or multi-contributor work.
 5. Confirm GitHub Pages remains healthy after the commit.
 6. Roll back by reverting to a known-good Git commit if production breaks.
 
-Do **not** use ZIP replacement or Make-based per-file publishing for routine updates.
+Do **not** use ZIP replacement or Make-based per-file publishing for routine updates. If the direct GitHub connector is temporarily unable to execute a required write despite confirmed authorization, a bounded administrative exception may use the separately authorized GitHub connection and must be switched off immediately afterward.
 
 ## Local preview
 ```bash
@@ -77,6 +79,6 @@ Registry-alignment hardening completed September 5, 2026:
 - 404 routing is hardened for GitHub project-page paths;
 - QA verifies sitemap coverage, 404 no-index behavior, repository hygiene, and absence of forms/external runtime dependencies;
 - a live post-alignment crawl verified all **20 public routes returned HTTP 200**;
-- the current ChatGPT GitHub App can read the repository but direct contents writes still return 403, so the Website Registry should continue to show selected-repository write access as pending until that permission is explicitly verified.
+- **access status is locked:** ChatGPT is set to `Allow all actions` for GitHub and the repository reports full administrative/push permissions; the remaining 403 on direct write calls is a connector execution problem and must not be mislabeled as missing GitHub access.
 
 The public discovery base in `robots.txt` and `sitemap.xml` currently uses the GitHub Pages URL. When an owned production domain is connected, those files and any canonical/Open Graph URL metadata must be reconciled to the canonical host.
