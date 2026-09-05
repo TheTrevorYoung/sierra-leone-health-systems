@@ -12,7 +12,7 @@ Public Tier 1 website for **Sierra Leone Health Systems**.
 This is a health-systems research and public-learning website. It is **not** a healthcare provider, hospital, insurer, patient portal, clinical-research enrollment site, or government program.
 
 ## Portfolio website standard
-Shared website infrastructure is governed by the locked **Social Media Portfolio — Website Infrastructure, Deployment & Security Standard v1.0** and the shared **Portfolio Website Registry & Infrastructure Status**.
+Shared website infrastructure is governed by the locked **Social Media Portfolio — Website Infrastructure, Deployment & Security Standard v1.0** and the shared **Portfolio Website Registry & Infrastructure Status**. These supersede earlier Health Systems website deployment methods for shared infrastructure.
 
 For this Tier 1 site:
 - GitHub is the authoritative source of website code/content.
@@ -20,6 +20,7 @@ For this Tier 1 site:
 - GitHub Pages publishes directly from `main` / root.
 - No custom GitHub Action is required merely to publish the site.
 - Routine editing target: **zero Make credits**.
+- Direct selected-repository GitHub read/write access is the target state; the current ChatGPT GitHub App can read this repository but its direct contents write remains blocked, so administrative exceptions may use the separately authorized Make GitHub connection.
 - The dedicated Health Systems project remains authoritative for content, claims, research methodology, design direction and public identity.
 
 ## Architecture
@@ -43,7 +44,7 @@ For this Tier 1 site:
 ## Routine update process
 1. Make a bounded, reviewable change.
 2. Run `python scripts/qa.py` locally before publishing.
-3. Commit directly to `main` for ordinary low-risk solo edits.
+3. Commit directly to `main` for ordinary low-risk solo edits when direct repository write access is available.
 4. Use a feature branch / pull request for material redesigns, sensitive claims, risky integrations or multi-contributor work.
 5. Confirm GitHub Pages remains healthy after the commit.
 6. Roll back by reverting to a known-good Git commit if production breaks.
@@ -69,10 +70,13 @@ Do not publish provider, licensing, government-partnership, pilot-authorization,
 Build v0.2 includes the Sierra Leone reform tracker, cross-model comparison, Model 0.x, financing context, evidence registry and public claim firewall.
 
 Registry-alignment hardening completed September 5, 2026:
-- registry-selected GitHub App access can read repository state, but direct repository writes are still blocked pending selected-repository authorization;
-- this alignment is being applied through a one-time Make administrative exception; the legacy ZIP deployment workflow is retired as part of that migration;
-- deployment documentation converted to Tier 1 direct publishing;
-- 404 routing hardened for GitHub project-page paths;
-- QA expanded to verify sitemap coverage, 404 no-index behavior and absence of forms/external runtime dependencies.
+- the Portfolio Website Registry and locked infrastructure standard supersede the earlier Health Systems deployment method;
+- the legacy ZIP/bootstrap deployment workflow has been retired;
+- routine publishing is defined as direct repository updates plus native GitHub Pages, with a zero-Make-credit target;
+- deployment documentation is aligned to Tier 1 direct publishing;
+- 404 routing is hardened for GitHub project-page paths;
+- QA verifies sitemap coverage, 404 no-index behavior, repository hygiene, and absence of forms/external runtime dependencies;
+- a live post-alignment crawl verified all **20 public routes returned HTTP 200**;
+- the current ChatGPT GitHub App can read the repository but direct contents writes still return 403, so the Website Registry should continue to show selected-repository write access as pending until that permission is explicitly verified.
 
 The public discovery base in `robots.txt` and `sitemap.xml` currently uses the GitHub Pages URL. When an owned production domain is connected, those files and any canonical/Open Graph URL metadata must be reconciled to the canonical host.
