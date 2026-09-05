@@ -12,13 +12,14 @@ Verified:
 - dedicated public repository;
 - production branch `main`;
 - GitHub Pages from `main` / root;
-- direct GitHub repository metadata reads work, but direct connector writes remain blocked pending selected-repository GitHub App authorization;
-- routine Make publishing is not required and remains prohibited by the Tier 1 default;
-- a one-time Make administrative exception is being used only to apply this registry-alignment commit and retire the legacy ZIP deployment workflow;
-- GitHub remains the authoritative website code/content source.
+- legacy ZIP/bootstrap deployment workflow retired;
+- routine Make publishing is not required and remains outside the Tier 1 default;
+- GitHub remains the authoritative website code/content source;
+- the current ChatGPT GitHub App can read repository state, but a direct Contents API write returned HTTP 403, so selected-repository write access remains an infrastructure gate;
+- the separately authorized Make GitHub connection may be used only as a bounded administrative exception when a required GitHub write is unavailable through the direct connection.
 
 ## Full static-site audit
-Automated QA passes across **21 HTML files / 20 public routes**.
+Repository QA passes across **21 HTML files / 20 public routes**. A live crawl on September 5, 2026 also returned **HTTP 200 on all 20 public routes**.
 
 Validated:
 - all internal links resolve;
@@ -37,11 +38,13 @@ Validated:
 - no localhost/file URLs in deployable HTML.
 
 ## Performance / complexity
-The site remains deliberately lightweight: static HTML/CSS/JS, no framework build, no database, no image/video payload, and only minimal navigation JavaScript. Tier 1 remains the correct infrastructure classification.
+The site remains deliberately lightweight: static HTML/CSS/JS, no framework build, no database, no image/video payload, and only minimal navigation JavaScript. **Tier 1 remains the correct classification.**
 
 ## Remaining infrastructure gates
-1. Add this repository to the selected-repository GitHub App write authorization and verify a direct bounded update.
-2. The production domain remains **TBD**. When an owned domain is connected, update the Website Registry, DNS/HTTPS, canonical URLs, `og:url`, `robots.txt` and `sitemap.xml`, then rerun QA.
+1. Verify selected-repository direct GitHub write authorization for this repository so ordinary ChatGPT-assisted edits do not require the Make administrative exception.
+2. Production domain remains **TBD**. When an owned domain is connected, update the Website Registry, DNS/HTTPS, canonical URLs, `og:url`, `robots.txt` and `sitemap.xml`, then rerun QA.
+
+`main` is currently unprotected. That is acceptable for the present solo, low-risk Tier 1 workflow under the locked standard. Add branch rules/rulesets when contributor count or production risk materially increases.
 
 ## Governance boundary
 The site remains **RESEARCH & CO-DESIGN PHASE**. Infrastructure alignment does not authorize provider, clinical, government-partnership, insurance, pilot, referral-network or patient-enrollment claims.
