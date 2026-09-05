@@ -1,0 +1,47 @@
+{
+  "phase": "RESEARCH & CO-DESIGN PHASE",
+  "categories": {
+    "PUBLIC_NOW": [
+      "Sierra Leone Health Systems is an independent health-systems research and public-learning initiative.",
+      "Healthcare That Works compares health-system models and tests transferability to Sierra Leone.",
+      "Cuba is one foundational comparative influence, not a blueprint to copy.",
+      "The project is studying Sierra Leone's existing community, PHU and referral architecture.",
+      "Maternal health is the first tracer pathway.",
+      "The current model is versioned and under development.",
+      "The project is not currently a healthcare provider."
+    ],
+    "PUBLIC_WITH_QUALIFIER": [
+      "A feature may appear transferable only when named conditions are met.",
+      "Government reforms must be described with their verified implementation status.",
+      "Statistics require year and source context.",
+      "A model component may be supported by evidence without being operationally validated in Sierra Leone.",
+      "A future pilot must be described as conditional and not currently authorized.",
+      "WHO reported in Q2 2026 that Sierra Leone's NHSSP 2026–2030 was aligned and validated.",
+      "WHO reported in Q2 2026 that nationwide Health Benefit Package mapping was completed."
+    ],
+    "INTERNAL_ONLY": [
+      "Unconfirmed institutional relationships",
+      "Negotiating positions",
+      "Confidential cost assumptions",
+      "Prospective funder or vendor discussions",
+      "Unverified pilot locations",
+      "Detailed future provider ownership structures",
+      "Personally identifiable participant information",
+      "Sensitive security or compliance records"
+    ],
+    "PROHIBITED_UNTIL_GATE": [
+      "Licensed healthcare provider",
+      "Government-approved program",
+      "Ministry or DHMT partner",
+      "Authorized pilot",
+      "Accredited clinic or network",
+      "Confirmed referral network",
+      "Health insurance or subscription benefits",
+      "Guaranteed free services",
+      "Confirmed implementation date",
+      "Patient enrollment open",
+      "Clinical research participant recruitment",
+      "Specific clinical outcome claims from the future model"
+    ]
+  }
+}
