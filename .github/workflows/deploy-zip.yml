@@ -1,0 +1,45 @@
+name: Deploy Health Systems Site
+
+on:
+  push:
+    paths:
+      - '.bootstrap2/READY'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  expand-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Verify and expand site archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "8f99cabe095e3e69f2c166304aac163486437da652edd140f4af667df5e65691  .bootstrap2/site.zip" | sha256sum -c -
+          rm -rf /tmp/healthsite-unpack
+          mkdir -p /tmp/healthsite-unpack
+          unzip -q .bootstrap2/site.zip -d /tmp/healthsite-unpack
+          rsync -a --delete --exclude '.git/' --exclude '.github/' /tmp/healthsite-unpack/sierra-leone-health-systems-site/ ./
+          rm -rf .bootstrap .bootstrap2
+          rm -f .github/workflows/bootstrap.yml
+
+      - name: Commit expanded site
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Deploy Sierra Leone Health Systems website v0.2"
+            git push
+          fi
