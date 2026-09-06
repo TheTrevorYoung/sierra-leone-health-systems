@@ -1,0 +1,84 @@
+/* Visual storytelling layer — portfolio website protocol v1.1
+   Reference: The Ocean Cleanup's image-led research storytelling, adapted for an independent health-systems research institute.
+   Public media is interim, rights-tracked, and intended to be replaced by commissioned Sierra Leone photography/video over time. */
+
+.media-hero{padding:0;position:relative;overflow:hidden;background:#0c1a15;color:#fff}
+.media-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,.92fr);min-height:680px}
+.media-hero-copy{padding:92px 64px 86px max(20px,calc((100vw - var(--max))/2));display:flex;flex-direction:column;justify-content:center}
+.media-hero h1{color:#fff;max-width:11.5ch;margin-bottom:24px}
+.media-hero .lead,.media-hero .lead-sm{color:#d5e0da;max-width:700px}
+.media-hero .status-pill{background:rgba(220,232,223,.14);color:#dce8df;border:1px solid rgba(220,232,223,.24)}
+.media-hero .text-link{color:#dce8df}
+.media-hero-visual{position:relative;min-height:620px;background:#20352c}
+.media-hero-visual img{width:100%;height:100%;display:block;object-fit:cover;filter:saturate(.86) contrast(1.04)}
+.media-hero-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,26,21,.18),rgba(12,26,21,0) 45%),linear-gradient(0deg,rgba(12,26,21,.28),transparent 34%)}
+.media-credit{position:absolute;z-index:2;left:22px;bottom:18px;right:22px;font-size:.74rem;line-height:1.35;color:#f3f5f3;text-shadow:0 1px 5px rgba(0,0,0,.65)}
+.media-credit a{text-decoration:underline;text-underline-offset:3px}
+
+.story-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px}
+.story-card{display:flex;flex-direction:column;min-height:100%;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--paper)}
+.story-card-media{aspect-ratio:16/10;overflow:hidden;background:#dde5df}
+.story-card-media img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .3s ease}
+.story-card:hover .story-card-media img{transform:scale(1.02)}
+.story-card-body{padding:24px}
+.story-card-body p{color:var(--muted)}
+.story-card .media-credit{position:static;padding:8px 12px;background:#102219;color:#d8e2dc;text-shadow:none;font-size:.68rem}
+
+.editorial-split{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:62px;align-items:center}
+.editorial-media{position:relative;border-radius:24px;overflow:hidden;min-height:480px;background:#dfe7e1;box-shadow:var(--shadow)}
+.editorial-media img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
+.editorial-media .media-credit{background:linear-gradient(0deg,rgba(0,0,0,.55),transparent);padding-top:34px;left:0;right:0;bottom:0;padding-left:18px;padding-bottom:15px}
+
+.research-focus{display:grid;grid-template-columns:1.05fr .95fr;gap:22px}
+.research-focus-main,.research-focus-side{border-radius:24px;overflow:hidden;position:relative;min-height:470px;background:#13261e;color:#fff}
+.research-focus-side{display:grid;grid-template-rows:1fr 1fr;gap:18px;background:transparent;min-height:470px}
+.research-focus-side article{position:relative;border-radius:20px;overflow:hidden;min-height:226px;background:#20352c}
+.research-focus img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.8) brightness(.7)}
+.research-focus-overlay{position:absolute;inset:0;padding:30px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(0deg,rgba(9,20,15,.88),rgba(9,20,15,.06) 66%)}
+.research-focus-overlay h3,.research-focus-overlay h2{color:#fff;max-width:15ch}
+.research-focus-overlay p{color:#d9e2dd;max-width:58ch}
+.research-focus-overlay .text-link{color:#fff}
+
+.video-feature{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.video-shell{background:#09120e;border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+.video-shell video{display:block;width:100%;aspect-ratio:16/9;background:#09120e}
+.video-caption{padding:12px 16px;color:#c9d6cf;background:#102219;font-size:.72rem}
+.video-caption a{text-decoration:underline;text-underline-offset:3px}
+
+.knowledge-band{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.knowledge-item{padding:26px;border-top:2px solid var(--forest)}
+.knowledge-item p{color:var(--muted)}
+
+.page-hero.media-page-hero{padding-bottom:38px}
+.page-hero-media{margin-top:36px;border-radius:24px;overflow:hidden;position:relative;aspect-ratio:16/7;background:#dfe7e1;box-shadow:var(--shadow)}
+.page-hero-media img{width:100%;height:100%;object-fit:cover;display:block}
+.page-hero-media .media-credit{left:0;right:0;bottom:0;padding:36px 18px 14px;background:linear-gradient(0deg,rgba(0,0,0,.62),transparent);text-shadow:none}
+
+.photo-row{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-top:34px}
+.photo-row figure{margin:0;position:relative;border-radius:20px;overflow:hidden;min-height:360px;background:#dfe7e1}
+.photo-row figure img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
+.photo-row figure .media-credit{left:0;right:0;bottom:0;padding:34px 16px 13px;background:linear-gradient(0deg,rgba(0,0,0,.6),transparent);text-shadow:none}
+
+.media-note{font-size:.8rem;color:var(--muted);margin-top:12px}
+.media-note a{text-decoration:underline;text-underline-offset:3px}
+
+@media(max-width:1000px){
+  .media-hero-grid{grid-template-columns:1fr;min-height:auto}
+  .media-hero-copy{padding:78px 24px 64px}
+  .media-hero-visual{min-height:500px}
+  .editorial-split,.research-focus,.video-feature{grid-template-columns:1fr}
+  .story-strip,.knowledge-band{grid-template-columns:repeat(2,1fr)}
+  .research-focus-main{min-height:440px}
+}
+@media(max-width:640px){
+  .media-hero-copy{padding:58px 14px 48px}
+  .media-hero-visual{min-height:410px}
+  .story-strip,.knowledge-band,.photo-row{grid-template-columns:1fr}
+  .editorial-media{min-height:390px}
+  .research-focus-side{grid-template-rows:auto;min-height:auto}
+  .research-focus-side article{min-height:300px}
+  .research-focus-overlay{padding:22px}
+  .page-hero-media{aspect-ratio:4/3}
+  .photo-row figure{min-height:300px}
+}
+@media(prefers-reduced-motion:reduce){.story-card-media img{transition:none}}
