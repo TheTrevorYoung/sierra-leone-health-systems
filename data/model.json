@@ -1,37 +1,50 @@
 {
-  "version": "0.x",
-  "phase": "Research & Co-Design Phase",
+  "schema": "research-framework-v1",
+  "entity": "Sierra Leone Health Research",
+  "phase": "Independent Health-Systems Research",
   "clinical_service": false,
+  "operates_referrals": false,
+  "purpose": "Study reliability across the full care journey and publish evidence, limitations and implications.",
   "components": [
     {
-      "id": "defined-population",
-      "status": "working-hypothesis",
-      "title": "Defined population and household responsibility"
+      "id": "first-contact",
+      "status": "research-domain",
+      "title": "First contact and access"
     },
     {
-      "id": "front-line-team",
-      "status": "working-hypothesis",
-      "title": "Accountable front-line community team"
+      "id": "primary-care-reliability",
+      "status": "research-domain",
+      "title": "Primary-care reliability"
     },
     {
-      "id": "minimum-reliable-phu",
-      "status": "evidence-supports",
-      "title": "Minimum Reliable PHU"
+      "id": "referral-initiation",
+      "status": "research-domain",
+      "title": "Escalation and referral initiation"
     },
     {
-      "id": "primary-care-hub",
-      "status": "under-review",
-      "title": "Higher-capacity primary-care hub"
+      "id": "referral-completion",
+      "status": "research-domain",
+      "title": "Referral completion and receiving capability"
     },
     {
-      "id": "closed-loop-referral",
-      "status": "evidence-supports",
-      "title": "Closed-loop referral"
+      "id": "referral-closure",
+      "status": "research-domain",
+      "title": "Information return and referral closure"
     },
     {
-      "id": "measurement",
-      "status": "evidence-supports",
-      "title": "Measurement, safety and learning"
+      "id": "follow-up",
+      "status": "research-domain",
+      "title": "Continuity and follow-up"
+    },
+    {
+      "id": "maternal-tracer",
+      "status": "priority-tracer",
+      "title": "Maternal Health Stress Test"
+    },
+    {
+      "id": "comparative-systems",
+      "status": "research-program",
+      "title": "Healthcare That Works"
     }
   ]
 }
