@@ -1,47 +1,48 @@
 {
-  "phase": "RESEARCH & CO-DESIGN PHASE",
+  "phase": "INDEPENDENT HEALTH-SYSTEMS RESEARCH",
   "categories": {
     "PUBLIC_NOW": [
-      "Sierra Leone Health Systems is an independent health-systems research and public-learning initiative.",
-      "Healthcare That Works compares health-system models and tests transferability to Sierra Leone.",
-      "Cuba is one foundational comparative influence, not a blueprint to copy.",
-      "The project is studying Sierra Leone's existing community, PHU and referral architecture.",
-      "Maternal health is the first tracer pathway.",
-      "The current model is versioned and under development.",
-      "The project is not currently a healthcare provider."
+      "Sierra Leone Health Research is an independent health-systems research entity.",
+      "The organization conducts research, analysis, evidence synthesis, public explanation and expert review.",
+      "Healthcare That Works compares health-system mechanisms and examines transferability to Sierra Leone.",
+      "Cuba is one comparative system, not a blueprint or ideological identity.",
+      "The organization studies Sierra Leone's existing community, PHU, hospital and referral architecture.",
+      "Maternal health is the first end-to-end systems research tracer.",
+      "Closed-loop referral is a research lens for studying referral completion, closure and continuity.",
+      "Sierra Leone Health Research does not provide medical care, operate healthcare facilities, manage referrals or enroll patients."
     ],
     "PUBLIC_WITH_QUALIFIER": [
-      "A feature may appear transferable only when named conditions are met.",
+      "A health-system mechanism may appear transferable only when named conditions and evidence support that interpretation.",
       "Government reforms must be described with their verified implementation status.",
-      "Statistics require year and source context.",
-      "A model component may be supported by evidence without being operationally validated in Sierra Leone.",
-      "A future pilot must be described as conditional and not currently authorized.",
+      "Statistics require year, source and relevant context.",
+      "Expert interpretation must be attributed and distinguished from empirical evidence.",
+      "Lived experience must not be generalized beyond the method used to collect it.",
       "WHO reported in Q2 2026 that Sierra Leone's NHSSP 2026–2030 was aligned and validated.",
       "WHO reported in Q2 2026 that nationwide Health Benefit Package mapping was completed."
     ],
     "INTERNAL_ONLY": [
       "Unconfirmed institutional relationships",
-      "Negotiating positions",
-      "Confidential cost assumptions",
-      "Prospective funder or vendor discussions",
-      "Unverified pilot locations",
-      "Detailed future provider ownership structures",
+      "Confidential research access discussions",
+      "Sensitive unpublished data",
       "Personally identifiable participant information",
-      "Sensitive security or compliance records"
+      "Sensitive health information",
+      "Unverified funding or collaboration discussions",
+      "Security or compliance records"
     ],
-    "PROHIBITED_UNTIL_GATE": [
-      "Licensed healthcare provider",
-      "Government-approved program",
-      "Ministry or DHMT partner",
-      "Authorized pilot",
-      "Accredited clinic or network",
-      "Confirmed referral network",
-      "Health insurance or subscription benefits",
-      "Guaranteed free services",
-      "Confirmed implementation date",
+    "PROHIBITED_UNDER_THIS_ENTITY": [
+      "Healthcare provider",
+      "Clinic or hospital operator",
+      "Patient referral manager",
       "Patient enrollment open",
-      "Clinical research participant recruitment",
-      "Specific clinical outcome claims from the future model"
+      "Medical advice service",
+      "Health insurance or subscription service",
+      "Government-approved program without direct evidence",
+      "Ministry, DHMT or institutional partner without direct evidence",
+      "Clinical pilot operated by Sierra Leone Health Research",
+      "Provider network owned or operated by Sierra Leone Health Research",
+      "Guaranteed clinical services or outcomes",
+      "Research conclusion shaped to promote a founder-affiliated healthcare venture",
+      "Human-participant research recruitment without an appropriate ethics determination and applicable approvals"
     ]
   }
 }
