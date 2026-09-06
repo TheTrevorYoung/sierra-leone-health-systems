@@ -152,5 +152,33 @@
     "year": 2021,
     "url": "https://documents1.worldbank.org/curated/en/814591624897277544/pdf/Walking-the-Talk-Reimagining-Primary-Health-Care-After-COVID-19.pdf",
     "note": "Provides comparative PHC team examples, including Costa Rica's geographically assigned EBAIS teams and team composition."
+  },
+  {
+    "title": "Portugal: Country Health Profile 2023",
+    "org": "OECD / European Observatory",
+    "year": 2023,
+    "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2023/12/portugal-country-health-profile-2023_eebec3f5/069af7b1-en.pdf",
+    "note": "Describes Portugal's Family Health Units as autonomous multidisciplinary primary-care teams responsible for specific registered populations."
+  },
+  {
+    "title": "OECD Economic Surveys: Portugal 2023 — primary care reforms",
+    "org": "OECD",
+    "year": 2023,
+    "url": "https://www.oecd.org/en/publications/oecd-economic-surveys-portugal-2023_2b8ee40a-en/full-report/component-5.html",
+    "note": "Details Family Health Units, primary-care clusters, team autonomy and performance-linked organization."
+  },
+  {
+    "title": "Political economy analysis of primary health care-oriented reforms: Thailand",
+    "org": "World Health Organization",
+    "year": 2024,
+    "url": "https://www.who.int/publications/i/item/9789240102743",
+    "note": "Examines Thailand's decades-long PHC approach, district health systems and purchasing under universal coverage."
+  },
+  {
+    "title": "Thailand: the development of primary health care",
+    "org": "World Health Organization",
+    "year": 2018,
+    "url": "https://www.who.int/teams/primary-health-care/evidence-and-innovation/primary-health-care-case-study-compendium/detail/country-case-studies-on-primary-health-care--thailand--the-development-of-primary-health-care",
+    "note": "Reviews the evolution of Thailand's primary health care system and its role in achieving universal health coverage."
   }
 ]
