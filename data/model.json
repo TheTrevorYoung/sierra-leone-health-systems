@@ -15,7 +15,7 @@
     },
     {
       "id": "minimum-reliable-phu",
-      "status": "evidence-supports-principle",
+      "status": "evidence-supports",
       "title": "Minimum Reliable PHU"
     },
     {
@@ -25,12 +25,12 @@
     },
     {
       "id": "closed-loop-referral",
-      "status": "evidence-supports-principle",
+      "status": "evidence-supports",
       "title": "Closed-loop referral"
     },
     {
       "id": "measurement",
-      "status": "required-design-layer",
+      "status": "evidence-supports",
       "title": "Measurement, safety and learning"
     }
   ]
