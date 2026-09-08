@@ -1,0 +1,68 @@
+/* Build v0.9 academic presentation layer.
+   The goal is a quieter research-institute interface with less decorative repetition,
+   stronger hierarchy, and readable long-form research pages. */
+
+:root{--academic-rule:#cfd8d2;--academic-muted:#5b6862}
+body{background:#fff;color:#202b26}
+.site-header{background:rgba(255,255,255,.97);border-bottom:1px solid var(--academic-rule);box-shadow:none}
+.brand-mark{border-radius:6px}
+.nav-link{font-weight:550}
+.button{border-radius:8px;box-shadow:none}
+.status-pill,.tag,.badge{border-radius:5px}
+.section{padding:64px 0}
+.section-tint{background:#f6f7f5}
+.section-dark{background:#102019}
+.page-hero{background:#fff}
+.page-hero h1{max-width:15ch}
+.page-hero .lead{max-width:760px}
+.media-hero-grid{min-height:620px}
+.media-hero-copy{padding-top:78px;padding-bottom:72px}
+.media-hero h1{max-width:12.5ch}
+.media-hero-visual{min-height:560px}
+.feature-card,.story-card,.panel,.callout{border-radius:10px;box-shadow:none}
+.feature-card{border:1px solid var(--academic-rule)}
+.feature-card:hover{transform:none;box-shadow:none}
+.story-card-media{aspect-ratio:16/9}
+.editorial-media,.page-hero-media,.photo-row figure,.video-shell{border-radius:10px;box-shadow:none}
+.country-card-photo{margin:-28px -28px 22px}
+.knowledge-band{gap:32px}
+.knowledge-item{padding:20px 4px 10px;border-top:1px solid #244b3b}
+.academic-index .knowledge-item{min-height:220px}
+.academic-index .knowledge-item h3{font-size:1.45rem}
+.compact-band .knowledge-item{min-height:0}
+.section-heading{margin-bottom:30px}
+.section-heading h2{max-width:18ch}
+.split-intro{align-items:start}
+.academic-standard{align-items:start}
+.academic-standard h2{max-width:13ch}
+.research-steps{margin:0;padding-left:1.2rem}
+.research-steps li{margin:0 0 14px;padding-left:6px}
+.research-steps strong{color:#102019}
+.section-dark .research-steps strong{color:#fff}
+.section-actions{margin-top:28px}
+.publication-note{margin-top:28px;max-width:860px}
+.contribution-paths .feature-card,.open-calls .feature-card{min-height:100%}
+.small-note{font-size:.94rem;color:var(--academic-muted)}
+.trust-line{border-radius:5px}
+.site-footer{background:#0e1c16}
+.footer-grid{gap:42px}
+.footer-boundary{max-width:390px}
+.visual-gallery-section{background:#fff;border-top:1px solid var(--academic-rule)}
+.visual-gallery figure{border-radius:8px}
+.visual-gallery figcaption,.media-credit{border-radius:5px}
+
+/* Reduce decorative motion and visual noise on academic pages. */
+.story-card-media img,.feature-card,.text-link{transition:none}
+
+@media(max-width:1000px){
+  .academic-index{grid-template-columns:1fr}
+  .academic-index .knowledge-item{min-height:0}
+  .media-hero-grid{min-height:auto}
+}
+
+@media(max-width:640px){
+  .section{padding:52px 0}
+  .media-hero-copy{padding-top:52px;padding-bottom:44px}
+  .page-hero h1,.media-hero h1{max-width:none}
+  .knowledge-band{gap:18px}
+}
