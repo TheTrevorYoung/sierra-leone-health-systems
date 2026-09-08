@@ -84,10 +84,10 @@ if(menuButton&&siteNav){
     '/research/models/thailand':{title:'Community care in Thailand',items:[media.thailandRural,media.thailandVolunteers]},
     '/model/financing':{title:'Access has a geography and a cost',items:[media.slRoad,media.slCommunity4]},
     '/model/change-log':{title:'Research grounded in place',items:[media.slCommunity5,media.slChild]},
-    '/pilot-pathway':{title:'From evidence to practical use',items:[media.slRural,media.slHospital]},
+    '/pilot-pathway':{title:'From evidence to practical use',items:[media.slCommunity2]},
     '/participate/experts':{title:'Expertise connected to context',items:[media.slCommunity3,media.slChild]},
     '/about/methodology':{title:'Research grounded in real systems',items:[media.slCommunity4,media.slRural]},
-    '/evidence':{title:'Evidence connected to the real system',items:[media.slCommunity5,media.slHospital]}
+    '/evidence':{title:'Evidence connected to the real system',items:[media.slCommunity5]}
   };
 
   const config=galleries[normalized];
