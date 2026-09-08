@@ -75,9 +75,8 @@ if(menuButton&&siteNav){
   const normalized=route==='/'?'/':route.replace(/\/$/,'');
 
   // Automatic galleries are intentionally limited. Pages with strong manual photography
-  // do not receive another repeated Sierra Leone gallery.
+  // or image-led country cards do not receive another repeated gallery.
   const galleries={
-    '/research/healthcare-that-works':{title:'Five systems, five contexts',items:[media.cubaClinic,media.rwandaCommunity,media.costaEbais,media.portugalUsf,media.thailandRural]},
     '/research/models/cuba':{title:'Primary care in Cuba',items:[media.cubaClinic,media.cubaNurse]},
     '/research/models/rwanda':{title:'Community care in Rwanda',items:[media.rwandaCommunity,media.rwandaClinic]},
     '/research/models/costa-rica':{title:'Primary care in Costa Rica',items:[media.costaEbais,media.costaNursing]},
